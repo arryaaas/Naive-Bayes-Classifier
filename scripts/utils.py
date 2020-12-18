@@ -58,8 +58,8 @@ def classification(data, df_mean, df_std):
         ]
 
         posterior = [
-            math.prod(densitas_gauss_positif),
-            math.prod(densitas_gauss_negatif)
+            densitas_gauss_positif[0] * densitas_gauss_positif[1] * densitas_gauss_positif[2],
+            densitas_gauss_negatif[0] * densitas_gauss_negatif[1] * densitas_gauss_negatif[2]
         ]
         
         if max(posterior) == posterior[0]:
