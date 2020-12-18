@@ -1,15 +1,8 @@
 import pandas as pd
 import math
-# import os
 
 def data_training():
-    # cwd = os.getcwd()
-    # location = cwd + "/data/covid19.csv"
-    # return pd.read_csv(r'%s' % location, sep=';')
     return pd.read_csv("data/covid19.csv", sep=";")
-
-# df = pd.read_csv("data/covid19.csv", sep=";")
-# print(df)
 
 def data_grouping(df_training, category):
     return df_training[df_training["Kasus Terbesar Per Provinsi"] == category]
@@ -65,8 +58,8 @@ def classification(data, df_mean, df_std):
         ]
 
         posterior = [
-            densitas_gauss_positif[0] * densitas_gauss_positif[1] * densitas_gauss_positif[2],
-            densitas_gauss_negatif[0] * densitas_gauss_negatif[1] * densitas_gauss_negatif[2]
+            math.prod(densitas_gauss_positif),
+            math.prod(densitas_gauss_negatif)
         ]
         
         if max(posterior) == posterior[0]:
