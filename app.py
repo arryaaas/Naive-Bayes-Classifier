@@ -21,7 +21,7 @@ def home():
 def training():
     title = "Data Training ( Data Latih )"
     return render_template(
-        "training.html", title=title,
+        "layout.html", title=title,
         tables=[data_train.to_html(classes="data", header="true")]
     )
 
@@ -29,9 +29,9 @@ def training():
 def grouping():
     title = "Data Grouping ( Pengelompokan Data )"
     return render_template(
-        "grouping.html", title=title,
-        tables1=[data_positif.to_html(classes="data", header="true")], 
-        tables2=[data_negatif.to_html(classes="data", header="true")], 
+        "layout.html", title=title,
+        tables=[data_positif.to_html(classes="data", header="true")], 
+        tables1=[data_negatif.to_html(classes="data", header="true")], 
         total_positif=len(data_positif), total_negatif=len(data_negatif)
     )
 
@@ -39,7 +39,7 @@ def grouping():
 def mean():
     title = "Mean ( Nilai Rata-rata )"
     return render_template(
-        "dataframe.html", title=title,
+        "layout.html", title=title,
         tables=[data_mean.to_html(classes="data", header="true")]
     )
 
@@ -47,7 +47,7 @@ def mean():
 def std():
     title = "Standar Deviasi ( Simpangan Baku )"
     return render_template(
-        "dataframe.html", title=title,
+        "layout.html", title=title,
         tables=[data_std.to_html(classes="data", header="true")]
     )
 
@@ -55,8 +55,27 @@ def std():
 def prob():
     title = "Probabilitas ( Peluang )"
     return render_template(
-        "dataframe.html", title=title,
+        "layout.html", title=title,
         tables=[data_prob.to_html(classes="data", header="true")]
+    )
+
+@app.route('/analysis')
+def analysis():
+    title = "Analysis ( Analisa )"
+
+    data_analysis = data_train
+
+    classification(data_analysis, data_mean, data_std)
+
+    result = accuracy(data_analysis)
+    success_percentage = round((result[0] / len(data_analysis)) * 100, 4)
+    failed_percentage = round((result[1] / len(data_analysis)) * 100, 4)
+
+    return render_template(
+        "layout.html", title=title,
+        tables=[data_analysis.to_html(classes="data", header="true")],
+        total_data=len(data_analysis), success=result[0], failed=result[1],
+        success_percentage=success_percentage, failed_percentage=failed_percentage
     )
 
 @app.route('/testing')
@@ -78,7 +97,7 @@ def predict():
     classification(df_testing, data_mean, data_std)
 
     return render_template(
-        "dataframe.html", title=title,
+        "layout.html", title=title,
         tables=[df_testing.to_html(classes="data", header="true")]
     )
 

@@ -67,4 +67,16 @@ def classification(data, df_mean, df_std):
         else:
             category.append("Negatif")
     
-    data["Kasus Terbesar Per Provinsi"] = category
+    data["Kasus Terbesar Per Provinsi (Predict)"] = category
+
+def accuracy(data):
+    success = 0
+    failed = 0
+
+    for i in range(len(data)):
+        if (data.iloc[i][4] == data.iloc[i][5]):
+            success += 1
+        else :
+            failed +=1
+
+    return success, failed

@@ -1,27 +1,36 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container">
-      <h2>Data Testing ( Data Uji )</h2>
-      <br>
-      <form action="/predict" method="POST">
-        <div class="mb-3">
-          <input type="text" class="form-control"
-          placeholder="Nama Provinsi" name="nama_provinsi" required>
-        </div>
-        <div class="mb-3">
-          <input type="text" class="form-control"
-          placeholder="Dalam Perawatan" name="dalam_perawatan" required>
-        </div>
-        <div class="mb-3">
-          <input type="text" class="form-control"
-          placeholder="Sembuh" name="sembuh" required>
-        </div>
-        <div class="mb-3">
-          <input type="text" class="form-control"
-          placeholder="Meninggal" name="meninggal" required>
-        </div>
+        <h2>Data Testing ( Data Uji )</h2>
         <br>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        <div class="alert alert-block alert-info">
+            <b>Note :</b> Berdasarkan jurnal data testing yang digunakan yaitu :
+            <ul>
+                <li>Nama Provinsi : Aceh</li>
+                <li>Dalam Perawatan : 3</li>
+                <li>Sembuh : 13</li>
+                <li>Meninggal : 1</li>
+            </ul>
+        </div>
+        <form action="/predict" method="POST">
+            <div class="mb-3">
+                <input type="text" class="form-control"
+                placeholder="Nama Provinsi" name="nama_provinsi" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control"
+                placeholder="Dalam Perawatan" name="dalam_perawatan" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control"
+                placeholder="Sembuh" name="sembuh" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control"
+                placeholder="Meninggal" name="meninggal" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
 {% endblock %}

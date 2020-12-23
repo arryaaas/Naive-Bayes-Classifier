@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h2>{{ title }}</h2>
+        <br>
+        {% if title == "Data Training ( Data Latih )" %}
+            <div class="alert alert-block alert-info">
+                <b>Note :</b> Data yang digunakan diambil dari situs resmi 
+                <a href="https://covid19.go.id/peta-sebaran">Satgas Penanganan COVID-19</a> 
+                pada tanggal 15 Mei 2020.
+            </div>
+        {% elif title == "Data Grouping ( Pengelompokan Data )" %}
+            <h3>Data Positif</h3>
+        {% elif title == "Mean ( Nilai Rata-rata )" %}
+            <div class="alert alert-block alert-warning">
+                <b>Rumus :</b> <br> <br>
+                $\bar{x} = \frac{x_1 + x_2 + x_3 + ... + x_n}{n} = \frac{1}{n} \sum \limits^{n}_{i=1} x_i$
+            </div>
+        {% elif title == "Standar Deviasi ( Simpangan Baku )" %}
+            <div class="alert alert-block alert-warning">
+                <b>Rumus :</b> <br> <br>
+                $s = \sqrt{ \frac{n \sum \limits^{n}_{i=1} x_i^2 - (\sum \limits^{n}_{i=1} x_1)^2}{n(n-1)}}$
+            </div>
+        {% elif title == "Probabilitas ( Peluang )" %}
+            <div class="alert alert-block alert-warning">
+                <b>Rumus :</b> <br> <br> 
+                $P(E) = \frac{X}{N}$
+            </div>
+        {% elif title == "Analysis ( Analisa )" %}
+            <div class="alert alert-block alert-info">
+                <b>Note :</b> Dilakukan testing sebanyak {{ total_data }} data yang diambil dari data training untuk dibandingkan hasil prediksi dari atribut "Kasus Terbesar Per Provinsi".
+            </div>
+        {% elif title == "Predict ( Prediksi )" %}
+            <div class="alert alert-block alert-success">
+                <b>Success :</b> Data berhasil diklasifikasikan dengan keterangan sebagai berikut :
+                <ul>
+                    <li>Positif : Dapat dikatakan pada provinsi tersebut bahwa tingkat penyebaran COVID-19 dengan kasus pasien yang terkena positif lebih tinggi.</li>
+                    <li>Negatif : Dapat dikatakan pada provinsi tersebut bahwa tingkat penyebaran COVID-19 dengan kasus pasien yang terkena positif lebih rendah.</li>
+                </ul>
+            </div>
+        {% endif %}
+
+        <br>
+
+        {% for table in tables %}
+            {{ table|safe }}
+        {% endfor %}
+
+        {% if title == "Data Training ( Data Latih )" %}
+            <div class="alert alert-block alert-info">
+                <b>Note :</b>
+                <ul>
+                    <li>Positif : Kasus Pasien yang terkena Positif lebih besar.</li>
+                    <li>Negatif : Kasus pasien yang terkena positif lebih rendah.</li>
+                </ul>
+            </div>
+        {% elif title == "Data Grouping ( Pengelompokan Data )" %}
+            <div class="alert alert-block alert-info">
+                <b>Note :</b> Total data dengan kategori <b>Positif</b> sebanyak {{ total_positif }} data.
+            </div>
+            <br>
+            <h3>Data Negatif</h3>
+            {% for table in tables1 %}
+                {{ table|safe }}
+            {% endfor %}
+            <div class="alert alert-block alert-info">
+                <b>Note :</b> Total data dengan kategori <b>Negatif</b> sebanyak {{ total_negatif }} data.
+            </div>
+        {% elif title == "Analysis ( Analisa )" %}
+            <div class="alert alert-block alert-success">
+                <b>Success :</b> Dari {{ total_data }} data yang diuji, sebanyak {{ success }} data berhasil diklasifikasikan, dengan persentase {{ success_percentage }}%.
+            </div>
+            <div class="alert alert-block alert-danger">
+                <b>Failed :</b> Dari {{ total_data }} data yang diuji, sebanyak {{ failed }} data gagal diklasifikasikan, dengan persentase {{ failed_percentage }}%..
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
