@@ -22,16 +22,7 @@ def training():
     title = "Data Training ( Data Latih )"
     return render_template(
         "layout.html", title=title,
-        tables=[data_train.to_html(classes="data", header="true")]
-    )
-
-@app.route('/grouping')
-def grouping():
-    title = "Data Grouping ( Pengelompokan Data )"
-    return render_template(
-        "layout.html", title=title,
-        tables=[data_positif.to_html(classes="data", header="true")], 
-        tables1=[data_negatif.to_html(classes="data", header="true")], 
+        tables=[data_train.to_html(classes="data", header="true")],
         total_positif=len(data_positif), total_negatif=len(data_negatif)
     )
 
@@ -67,14 +58,14 @@ def analysis():
 
     classification(data_analysis, data_mean, data_std)
 
-    result = accuracy(data_analysis)
-    success_percentage = round((result[0] / len(data_analysis)) * 100, 4)
-    failed_percentage = round((result[1] / len(data_analysis)) * 100, 4)
+    success, failed = accuracy(data_analysis)
+    success_percentage = round((success / len(data_analysis)) * 100, 4)
+    failed_percentage = round((failed / len(data_analysis)) * 100, 4)
 
     return render_template(
         "layout.html", title=title,
         tables=[data_analysis.to_html(classes="data", header="true")],
-        total_data=len(data_analysis), success=result[0], failed=result[1],
+        total_data=len(data_analysis), success=success, failed=failed,
         success_percentage=success_percentage, failed_percentage=failed_percentage
     )
 
