@@ -1,19 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container">
-        <h2>Data Testing ( Data Uji )</h2>
+        <h2>{{ title }}</h2>
         <br>
-        <div class="alert alert-block alert-info">
-            <b>Note :</b> Berdasarkan 
-            <a href="https://journal.isas.or.id/index.php/JACOST/article/view/9">jurnal</a>
-            data testing yang digunakan yaitu :
-            <ul>
-                <li>Nama Provinsi : Aceh</li>
-                <li>Dalam Perawatan : 3</li>
-                <li>Sembuh : 13</li>
-                <li>Meninggal : 1</li>
-            </ul>
-        </div>
         <form action="/predict" method="POST">
             <div class="mb-3">
                 <input type="text" class="form-control"
