@@ -19,7 +19,7 @@ def home():
 
 @app.route('/training')
 def training():
-    title = "Data Training ( Data Latih )"
+    title = "Data Training"
     return render_template(
         "layout.html", title=title,
         tables=[data_train.to_html(classes="data", header="true")],
@@ -28,7 +28,7 @@ def training():
 
 @app.route('/mean')
 def mean():
-    title = "Mean ( Nilai Rata-rata )"
+    title = "Mean"
     return render_template(
         "layout.html", title=title,
         tables=[data_mean.to_html(classes="data", header="true")]
@@ -36,7 +36,7 @@ def mean():
 
 @app.route('/std')
 def std():
-    title = "Standar Deviasi ( Simpangan Baku )"
+    title = "Standar Deviasi"
     return render_template(
         "layout.html", title=title,
         tables=[data_std.to_html(classes="data", header="true")]
@@ -44,7 +44,7 @@ def std():
 
 @app.route('/prob')
 def prob():
-    title = "Probabilitas ( Peluang )"
+    title = "Probabilitas"
     return render_template(
         "layout.html", title=title,
         tables=[data_prob.to_html(classes="data", header="true")]
@@ -52,9 +52,9 @@ def prob():
 
 @app.route('/analysis')
 def analysis():
-    title = "Analysis ( Analisa )"
+    title = "Analysis"
 
-    data_analysis = data_train
+    data_analysis = data_training()
 
     classification(data_analysis, data_mean, data_std)
 
@@ -71,12 +71,12 @@ def analysis():
 
 @app.route('/testing')
 def testing():
-    title = "Data Testing ( Data Uji )"
+    title = "Data Testing"
     return render_template("testing.html", title=title)
 
 @app.route('/predict', methods=["POST"])
 def predict():
-    title = "Predict ( Prediksi )"
+    title = "Predict"
 
     df_testing = pd.DataFrame({
         "Provinsi" : request.form.get("nama_provinsi"),
