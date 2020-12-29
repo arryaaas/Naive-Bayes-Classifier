@@ -9,8 +9,6 @@
                 <a href="https://covid19.go.id/peta-sebaran">Satgas Penanganan COVID-19</a> 
                 pada tanggal 15 Mei 2020.
             </div>
-        {% elif title == "Data Grouping ( Pengelompokan Data )" %}
-            <h3>Data Positif</h3>
         {% elif title == "Mean ( Nilai Rata-rata )" %}
             <div class="alert alert-block alert-warning">
                 <b>Rumus :</b> <br> <br>
@@ -50,21 +48,9 @@
             <div class="alert alert-block alert-info">
                 <b>Note :</b>
                 <ul>
-                    <li>Positif : Kasus Pasien yang terkena Positif lebih besar.</li>
-                    <li>Negatif : Kasus pasien yang terkena positif lebih rendah.</li>
+                    <li>Positif : Kasus Pasien yang terkena Positif lebih besar (Ada {{ total_positif }} data).</li>
+                    <li>Negatif : Kasus pasien yang terkena positif lebih rendah (Ada {{ total_negatif }} data).</li>
                 </ul>
-            </div>
-        {% elif title == "Data Grouping ( Pengelompokan Data )" %}
-            <div class="alert alert-block alert-info">
-                <b>Note :</b> Total data dengan kategori <b>Positif</b> sebanyak {{ total_positif }} data.
-            </div>
-            <br>
-            <h3>Data Negatif</h3>
-            {% for table in tables1 %}
-                {{ table|safe }}
-            {% endfor %}
-            <div class="alert alert-block alert-info">
-                <b>Note :</b> Total data dengan kategori <b>Negatif</b> sebanyak {{ total_negatif }} data.
             </div>
         {% elif title == "Analysis ( Analisa )" %}
             <div class="alert alert-block alert-success">
