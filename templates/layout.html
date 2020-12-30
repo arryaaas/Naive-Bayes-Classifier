@@ -44,6 +44,12 @@
                     </div>
                 </div>
             </div>
+        {% elif title == "Predict" %}
+            {% if category == "Positif" %}
+                <b>Positif :</b> Kasus pasien yang terkena Positif lebih besar.
+            {% else %}
+                <b>Negatif :</b> Kasus pasien yang terkena Positif lebih rendah.
+            {% endif %}
         {% endif %}
     </div>
 {% endblock %}
