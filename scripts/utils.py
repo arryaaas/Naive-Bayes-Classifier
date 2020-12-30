@@ -46,25 +46,21 @@ def classification(data, df_mean, df_std):
     
     for i in range(len(data)):
         densitas_gauss_positif = [
-            # Probabilitas dalam perawatan (positif)
+            # Probabilitas dalam perawatan, sembuh, meninggal (positif)
             densitas_gauss(data.iloc[i][1], df_mean.iloc[0][1], df_std.iloc[0][1]),
-            # Probabilitas sembuh (positif)
             densitas_gauss(data.iloc[i][2], df_mean.iloc[0][2], df_std.iloc[0][2]),
-            # Probabilitas meninggal (positif)
             densitas_gauss(data.iloc[i][3], df_mean.iloc[0][3], df_std.iloc[0][3])
         ]
         
         densitas_gauss_negatif = [
-            # Probabilitas dalam perawatan (negatif)
+            # Probabilitas dalam perawatan, sembuh, dan meninggal (negatif)
             densitas_gauss(data.iloc[i][1], df_mean.iloc[1][1], df_std.iloc[1][1]),
-            # Probabilitas sembuh (positif)
             densitas_gauss(data.iloc[i][2], df_mean.iloc[1][2], df_std.iloc[1][2]),
-            # Probabilitas meninggal (positif)
             densitas_gauss(data.iloc[i][3], df_mean.iloc[1][3], df_std.iloc[1][3])
         ]
 
         posterior = [
-            # Probabilitas dalam perawatan * probabilitas sembuh * probabilitas meninggal
+            # Probabilitas (dalam perawatan * sembuh * meninggal)
             densitas_gauss_positif[0] * densitas_gauss_positif[1] * densitas_gauss_positif[2],
             densitas_gauss_negatif[0] * densitas_gauss_negatif[1] * densitas_gauss_negatif[2]
         ]
