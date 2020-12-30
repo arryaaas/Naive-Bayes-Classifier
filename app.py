@@ -89,7 +89,8 @@ def predict():
 
     return render_template(
         "layout.html", title=title,
-        tables=[df_testing.to_html(classes="data", header="true")]
+        tables=[df_testing.to_html(classes="data", header="true")],
+        category=df_testing.iloc[0][4]
     )
 
 if __name__ == '__main__':
