@@ -6,6 +6,11 @@ Kelas : Statistik Komputasi (D)
 
 Dapat diakses melalui [aryasalsabila.herokuapp.com](https://aryasalsabila.herokuapp.com/)
 
+
+## Libraries
+- [Pandas](https://pandas.pydata.org/) digunakan untuk membaca file excel atau csv dan membuat dataframe.
+
+
 ## :wink: Pengembang Proyek
 
 Mochammad Arya Salsabila (19081010001)
