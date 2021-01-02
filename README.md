@@ -10,18 +10,18 @@ Kelas : Statistik Komputasi (D)
 - [Gunicorn](https://gunicorn.org/) (Green Unicorn) adalah sebuah WSGI (Web Server Gateway Interface) HTTP Server untuk bahasa pemrograman Python.
 
 
-## :wink: Pengembang Proyek
+## Pengembang Proyek
 
 Mochammad Arya Salsabila (19081010001)
 
-## :movie_camera: Video Penjelasan 
+## Video Penjelasan 
 
 Video penjelasan tentang demo program dapat dilihat [disini]().
 
-## :paperclip: Lisensi 
+## Lisensi 
 
 Didistribusikan di bawah Lisensi MIT. Lihat `LICENSE` untuk informasi lebih lanjut.
 
-## :email: Kontak
+## Kontak
 
 Mochammad Arya Salsabila - Aryasalsabila789@gmail.com
