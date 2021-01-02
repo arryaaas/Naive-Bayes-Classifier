@@ -1,6 +1,6 @@
 # Naive Bayes
 
-Implementasi Algoritma Naive Bayes Untuk Memprediksi Tingkat Penyebaran Covid-19 Di Indonesia. Lihat langsung [disini](https://aryasalsabila.herokuapp.com/)
+Implementasi Algoritma Naive Bayes Untuk Memprediksi Tingkat Penyebaran Covid-19 Di Indonesia. Web dapat diakses [disini](https://aryasalsabila.herokuapp.com/)
 
 Kelas : Statistik Komputasi (D)
 
