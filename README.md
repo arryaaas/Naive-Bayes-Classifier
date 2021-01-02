@@ -16,7 +16,7 @@ Mochammad Arya Salsabila (19081010001)
 
 ## Video Penjelasan 
 
-Video penjelasan tentang demo program dapat dilihat [disini]().
+Video penjelasan tentang demo program dapat dilihat [disini](https://youtu.be/kP6_H_n26zs).
 
 ## Lisensi 
 
