@@ -1,14 +1,13 @@
 # Naive Bayes
 
-Implementasi Algoritma Naive Bayes Untuk Memprediksi Tingkat Penyebaran Covid-19 Di Indonesia.
+Implementasi Algoritma Naive Bayes Untuk Memprediksi Tingkat Penyebaran Covid-19 Di Indonesia. Lihat langsung [disini](https://aryasalsabila.herokuapp.com/)
 
 Kelas : Statistik Komputasi (D)
 
-Dapat diakses melalui [aryasalsabila.herokuapp.com](https://aryasalsabila.herokuapp.com/)
-
-
 ## Libraries
-- [Pandas](https://pandas.pydata.org/) digunakan untuk membaca file excel atau csv dan membuat dataframe.
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/) adalah Microframework python untuk membuat website.
+- [Pandas](https://pandas.pydata.org/) digunakan untuk membaca file excel atau csv dan membuat DataFrame.
+- [Gunicorn](https://gunicorn.org/) (Green Unicorn) adalah sebuah WSGI (Web Server Gateway Interface) HTTP Server untuk bahasa pemrograman Python.
 
 
 ## :wink: Pengembang Proyek
