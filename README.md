@@ -9,7 +9,6 @@ Kelas : Statistik Komputasi (D)
 - [Pandas](https://pandas.pydata.org/) digunakan untuk membaca file excel atau csv dan membuat DataFrame.
 - [Gunicorn](https://gunicorn.org/) (Green Unicorn) adalah sebuah WSGI (Web Server Gateway Interface) HTTP Server untuk bahasa pemrograman Python.
 
-
 ## Pengembang Proyek
 
 Mochammad Arya Salsabila (19081010001)
