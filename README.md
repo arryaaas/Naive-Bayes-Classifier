@@ -1,6 +1,6 @@
-# Naive Bayes
+# :chart_with_upwards_trend: Naive Bayes
 
-Implementasi Algoritma Naive Bayes Untuk Memprediksi Tingkat Penyebaran Covid-19 Di Indonesia
+Implementasi Algoritma Naive Bayes Untuk Memprediksi Tingkat Penyebaran Covid-19 Di Indonesia. Web ini menggunakan [Flask](https://flask.palletsprojects.com/en/1.1.x/) sebagai Backend Framework yang ditulis dalam bahasa pemrograman Python. Web ini dihosting pada [Heroku](https://www.heroku.com/) yang memanfaatkan [Gunicorn](https://gunicorn.org/) sebagai server deployment-nya Flask.
 
 Kelas : Statistik Komputasi (D)
 
@@ -22,7 +22,7 @@ python app.py
 4. Akses http://127.0.0.1:5000/
 5. Atau bisa akses secara langsung melalui https://aryasalsabila.herokuapp.com/
 
-## Libraries
+## :books: Libraries
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/) adalah Microframework Python untuk membuat website.
 - [Pandas](https://pandas.pydata.org/) digunakan untuk membaca file excel atau csv dan membuat DataFrame.
 - [Gunicorn](https://gunicorn.org/) (Green Unicorn) adalah sebuah WSGI (Web Server Gateway Interface) HTTP Server untuk bahasa pemrograman Python.
